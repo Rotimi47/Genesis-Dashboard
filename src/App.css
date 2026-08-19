@@ -1,0 +1,781 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Body — Geist */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('./fonts/geist/Geist-Variable.woff2') format('woff2');
+}
+
+/* Headings — Zalando Sans SemiExpanded */
+@font-face {
+  font-family: 'Zalando Sans SemiExpanded';
+  font-style: normal;
+  font-weight: 200 900;
+  font-display: swap;
+  src: url('/fonts/zalando-sans/ZalandoSansSemiExpanded-Semibold.ttf')
+    format('ttf');
+}
+
+@theme {
+  /* Fonts */
+  --font-body: "Geist", sans-serif;
+  --font-heading: "Zalando Sans SemiExpanded", sans-serif;
+
+  /* Neutrals */
+  --color-neutral-25: var(--neutral-25);
+  --color-neutral-35: var(--neutral-35);
+  --color-neutral-50: var(--neutral-50);
+  --color-neutral-100: var(--neutral-100);
+  --color-neutral-150: var(--neutral-150);
+  --color-neutral-175: var(--neutral-175);
+  --color-neutral-200: var(--neutral-200);
+  --color-neutral-250: var(--neutral-250);
+  --color-neutral-300: var(--neutral-300);
+  --color-neutral-350: var(--neutral-350);
+  --color-neutral-400: var(--neutral-400);
+  --color-neutral-450: var(--neutral-450);
+  --color-neutral-500: var(--neutral-500);
+  --color-neutral-550: var(--neutral-550);
+  --color-neutral-600: var(--neutral-600);
+  --color-neutral-650: var(--neutral-650);
+  --color-neutral-700: var(--neutral-700);
+  --color-neutral-740: var(--neutral-740);
+  --color-neutral-750: var(--neutral-750);
+  --color-neutral-800: var(--neutral-800);
+  --color-neutral-850: var(--neutral-850);
+  --color-neutral-860: var(--neutral-860);
+  --color-neutral-870: var(--neutral-870);
+  --color-neutral-885: var(--neutral-885);
+  --color-neutral-900: var(--neutral-900);
+  --color-neutral-950: var(--neutral-950);
+
+  /* Brand */
+  --color-brand-pure: var(--brand-pure);
+  --color-brand-main-01: var(--brand-main-01);
+  --color-brand-main-02: var(--brand-main-02);
+  --color-brand-main-03: var(--brand-main-03);
+  --color-brand-main-04: var(--brand-main-04);
+  --color-brand-main-05: var(--brand-main-05);
+  --color-brand-main-06: var(--brand-main-06);
+  --color-brand-main-07: var(--brand-main-07);
+  --color-brand-main-08: var(--brand-main-08);
+  --color-brand-main-09: var(--brand-main-09);
+  --color-brand-main-10: var(--brand-main-10);
+  --color-brand-main-11: var(--brand-main-11);
+
+  /* Green */
+  --color-green-01: var(--green-01);
+  --color-green-02: var(--green-02);
+  --color-green-03: var(--green-03);
+  --color-green-04: var(--green-04);
+  --color-green-05: var(--green-05);
+  --color-green-06: var(--green-06);
+  --color-green-07: var(--green-07);
+  --color-green-08: var(--green-08);
+  --color-green-09: var(--green-09);
+  --color-green-10: var(--green-10);
+  --color-green-11: var(--green-11);
+
+  /* Lime */
+  --color-lime-01: var(--lime-01);
+  --color-lime-02: var(--lime-02);
+  --color-lime-03: var(--lime-03);
+  --color-lime-04: var(--lime-04);
+  --color-lime-05: var(--lime-05);
+  --color-lime-06: var(--lime-06);
+  --color-lime-07: var(--lime-07);
+  --color-lime-08: var(--lime-08);
+  --color-lime-09: var(--lime-09);
+
+  /* Orange */
+  --color-orange-01: var(--orange-01);
+  --color-orange-02: var(--orange-02);
+  --color-orange-03: var(--orange-03);
+  --color-orange-04: var(--orange-04);
+  --color-orange-05: var(--orange-05);
+  --color-orange-06: var(--orange-06);
+  --color-orange-07: var(--orange-07);
+  --color-orange-08: var(--orange-08);
+  --color-orange-09: var(--orange-09);
+
+  /* Blue */
+  --color-blue-01: var(--blue-01);
+  --color-blue-02: var(--blue-02);
+  --color-blue-03: var(--blue-03);
+  --color-blue-04: var(--blue-04);
+  --color-blue-05: var(--blue-05);
+  --color-blue-06: var(--blue-06);
+  --color-blue-07: var(--blue-07);
+  --color-blue-08: var(--blue-08);
+  --color-blue-09: var(--blue-09);
+
+  /* Text */
+  --color-text-main-01: var(--text-main-01);
+  --color-text-main-02: var(--text-main-02);
+  --color-text-sub-01: var(--text-sub-01);
+  --color-text-sub-02: var(--text-sub-02);
+  --color-text-tertiary: var(--text-tertiary);
+  --color-text-invert: var(--text-invert);
+  --color-text-coloured: var(--text-coloured);
+
+  /* Surfaces */
+  --color-surface-hover-01: var(--surface-hover-01);
+  --color-surface-hover-02: var(--surface-hover-02);
+  --color-surface-hover-03: var(--surface-hover-03);
+  --color-surface-select-01: var(--surface-select-01);
+  --color-surface-tertiary: var(--surface-tertiary);
+  --color-surface-brand: var(--surface-brand);
+  --color-surface-level-01: var(--surface-level-01);
+  --color-surface-level-02: var(--surface-level-02);
+  --color-surface-level-03: var(--surface-level-03);
+  --color-surface-level-04: var(--surface-level-04);
+  --color-surface-level-05: var(--surface-level-05);
+
+  /* Strokes */
+  --color-surface-stroke-01: var(--surface-stroke-01);
+  --color-surface-stroke-02: var(--surface-stroke-02);
+  --color-surface-stroke-03: var(--surface-stroke-03);
+
+  /* Buttons */
+  --color-btn-main-01: var(--btn-main-01);
+  --color-btn-main-02: var(--btn-main-02);
+  --color-btn-main-03: var(--btn-main-03);
+  --color-btn-main-04: var(--btn-main-04);
+
+  /* States */
+  --color-states-error: var(--states-state-error);
+  --color-states-success: var(--states-state-success);
+  --color-states-ticked: var(--states-ticked);
+  --color-states-unticked: var(--states-state-unticked);
+}
+
+@layer base {
+  :root {
+    /*  Base tokens */
+
+    /* Neutrals */
+    --neutral-5: #fdfdfd;
+    --neutral-25: #fafafa;
+    --neutral-35: #f5f5f5;
+    --neutral-50: #f0f0f0;
+    --neutral-100: #ebebeb;
+    --neutral-150: #dcdcdc;
+    --neutral-175: #e1e1e1;
+    --neutral-178: #f5f5f5;
+    --neutral-200: #cdcdcd;
+    --neutral-250: #bebebe;
+    --neutral-300: #afafaf;
+    --neutral-350: #a0a0a0;
+    --neutral-400: #919191;
+    --neutral-450: #828282;
+    --neutral-500: #737373;
+    --neutral-550: #686868;
+    --neutral-600: #5c5c5c;
+    --neutral-650: #515151;
+    --neutral-700: #454545;
+    --neutral-740: #313131;
+    --neutral-750: #3a3a3a;
+    --neutral-800: #2e2e2e;
+    --neutral-850: #232323;
+    --neutral-860: #212121;
+    --neutral-870: #1b1b1b;
+    --neutral-885: #191919;
+    --neutral-900: #171717;
+    --neutral-950: #131313;
+    --neutral-960: #232323;
+
+    /* Brand */
+    --brand-pure: #ffffff;
+    --brand-main-01: #006c80;
+    --brand-main-02: #005c6d;
+    --brand-main-03: #bcf5ff;
+    --brand-main-04: #1299b2;
+    --brand-main-05: #2a474d;
+    --brand-main-06: #ceedf2;
+    --brand-main-07: #39cae5;
+    --brand-main-08: #00161a;
+    --brand-main-09: #cafa80;
+    --brand-main-10: #b9e576;
+    --brand-main-11: #5dcde5;
+    --brand-text-teal: #001a1f;
+    --brand-text-lime: #0f1900;
+    --brand-text-indigo: #0e104d;
+    --brand-sub-teal: #004451;
+    --brand-sub-lime: #264000;
+    --brand-sub-indigo: #26287c;
+
+    --white-01: #fafafa;
+
+    --rose-01: #fdd9df;
+    --rose-02: #fbb2bf;
+    --rose-03: #f88c9e;
+    --rose-04: #ff6d86;
+    --rose-05: #e0314f;
+    --rose-06: #c8455b;
+    --rose-07: #9f4756;
+    --rose-08: #7b455b;
+    --rose-09: #5a3f44;
+
+    /* Green Colors */
+    --green-01: #d5f7e5;
+    --green-02: #abefcc;
+    --green-03: #80e8b2;
+    --green-04: #56e099;
+    --green-05: #2cd87f;
+    --green-06: #34b070;
+    --green-07: #388b60;
+    --green-08: #386b50;
+    --green-09: #344e41;
+    --green-10: #80e8b2;
+    --green-11: #34b07026;
+
+    --lime-01: #e6f5d0;
+    --lime-02: #ceeba2;
+    --lime-03: #b5e073;
+    --lime-04: #9dd645;
+    --lime-05: #84cc16;
+    --lime-06: #71a521;
+    --lime-07: #5e8128;
+    --lime-08: #4c622c;
+    --lime-09: #3b462b;
+
+    --orange-01: #ffe5d5;
+    --orange-02: #ffcaab;
+    --orange-03: #ffb082;
+    --orange-04: #ff9558;
+    --orange-05: #ff7b2e;
+    --orange-06: #cf7038;
+    --orange-07: #a4643e;
+    --orange-08: #7d563f;
+    --orange-09: #5b473c;
+
+    /* Blue Colors */
+    --blue-01: #d5e5ff;
+    --blue-02: #a8d4ff;
+    --blue-03: #82beff;
+    --blue-04: #5ba9ff;
+    --blue-05: #2e93ff;
+    --blue-06: #3861cf;
+    --blue-07: #3e6fa4;
+    --blue-08: #3f5d7d;
+    --blue-09: #3c4b5b;
+
+    /* Semantic tokens */
+    --surface-hover-01: var(--neutral-35);
+    --surface-hover-02: var(--neutral-35);
+    --surface-hover-03: var(--neutral-35);
+    --surface-select-01: var(--neutral-50);
+    --surface-name: var(--neutral-50);
+    --surface-name-click: var(--neutral-150);
+    --surface-tertiary: var(--neutral-50);
+    --surface-brand: var(--brand-main-01);
+    --surface-sidebar-alert: rgba(224, 49, 79, 0.4);
+    --surface-sidebar-select: var(--neutral-50);
+    --surface-sidebar-hover-dropdown: var(--neutral-35);
+
+    --surface-level-01: var(--neutral-5);
+    --surface-level-01-isolated: var(--neutral-35);
+    --surface-level-01-invert: var(--neutral-950);
+    --surface-level-01-invert-alt: var(--neutral-700);
+    --surface-level-02: var(--neutral-5);
+    --surface-level-02-alt: var(--neutral-5);
+    --surface-level-02-alt-switch: var(--neutral-25);
+    --surface-level-02-alt-switch-sheet: var(--neutral-100);
+    --surface-level-03: var(--brand-pure);
+    --surface-level-04: var(--brand-pure);
+    --surface-level-04-alt: var(--neutral-100);
+    --surface-level-05: var(--neutral-100);
+    --surface-level-sunken: var(--neutral-50);
+    --surface-level-danger: #e0314f1a;
+    --surface-level-clickable: var(--neutral-25);
+    --surface-level-branch-holder: #ebebeb;
+
+    --surface-stroke-01: var(--neutral-100);
+    --surface-stroke-02: var(--neutral-100);
+    --surface-stroke-02-sheet: var(--neutral-100);
+    --surface-stroke-02-sheet-02: var(--neutral-200);
+    --surface-stroke-03: var(--neutral-100);
+
+    --field-level-01: var(--brand-pure);
+    --field-level-02: var(--brand-pure);
+    --field-level-03: var(--neutral-175);
+    --field-level-04: var(--neutral-50);
+    --field-level-05: var(--neutral-178);
+    --field-level-selected: var(--neutral-35);
+    --field-level-01-selected: var(--brand-pure);
+    --field-level-01-invert: var(--neutral-740);
+    --field-level-extra-option: var(--neutral-100);
+    --field-error: var(--rose-01);
+
+    --field-level-hover-01: var(--neutral-25);
+    --field-level-hover-02: var(--neutral-25);
+
+    --field-stroke-01: var(--neutral-175);
+    --field-stroke-unnamed: var(--neutral-250);
+    --field-stroke-error: var(--rose-02);
+
+    --text-main-01: var(--neutral-950);
+    --text-main-02: var(--neutral-550);
+    --text-sub-01: var(--neutral-500);
+    --text-sub-02: var(--neutral-500);
+    --text-tertiary: var(--neutral-400);
+    --text-tertiary-invert: var(--neutral-450);
+    --text-sidebar: var(--neutral-500);
+    --text-invert: var(--neutral-25);
+    --text-invert-sub: var(--neutral-300);
+    --text-coloured: var(--brand-main-01);
+    --text-coloured-invert: var(--brand-main-07);
+    --text-username: var(--neutral-950);
+    --text-branch-name: #5c5c5c;
+
+    --info-surface-01: var(--neutral-100);
+    --info-surface-1-invert: var(--neutral-50);
+    --info-surface-02: var(--neutral-100);
+    --info-surface-error: var(--rose-01);
+
+    --info-text-01: var(--neutral-850);
+    --info-text-02: var(--neutral-850);
+    --info-text-error: var(--rose-07);
+
+    --btn-main-01: var(--brand-main-02);
+    --btn-main-01-disabled: var(--neutral-175);
+    --btn-main-01-hover: var(--brand-main-01);
+    --btn-main-02: var(--brand-pure);
+    --btn-main-03: var(--brand-main-11);
+    --btn-main-04: var(--brand-main-10);
+
+    --btn-upload-btn: var(--brand-pure);
+    --btn-text-btn-01: var(--brand-pure);
+    --btn-text-btn-02: var(--neutral-400);
+    --btn-text-btn-03: var(--neutral-450);
+    --btn-text-btn-04: var(--neutral-950);
+    --btn-text-btn-disabled: var(--neutral-500);
+    --btn-text-coloured: var(--brand-main-03);
+
+    --btn-go-back: var(--neutral-100);
+    --btn-go-back-text: var(--neutral-950);
+
+    --btn-upload-01: var(--neutral-300);
+    --btn-upload-02: var(--neutral-950);
+
+    --btn-field-btn-main: var(--neutral-850);
+    --btn-field-btn-sub: var(--brand-pure);
+
+    --btn-dropdown-btn: var(--neutral-800);
+    --btn-dropdown-sub-active: var(--neutral-700);
+    --btn-dropdown-main-disabled: var(--neutral-700);
+    --btn-dropdown-main-active: var(--brand-main-04);
+    --btn-remove-fill: var(--rose-05);
+    --btn-white: var(--neutral-950);
+    --btn-popup-02: var(--brand-main-01);
+    --btn-sunk: var(--neutral-150);
+
+    --states-state-error: var(--rose-05);
+    --states-state-success: var(--green-06);
+    --states-ticked: var(--brand-main-01);
+    --states-state-unticked: var(--orange-05);
+
+    --brand-word: var(--neutral-950);
+    --brand-icon: var(--brand-main-01);
+
+    --close-text-01: var(--neutral-850);
+
+    --modal-surface: var(--neutral-25);
+    --modal-in-stroke: var(--neutral-100);
+    --modal-field: var(--neutral-25);
+    --modal-btn-stroke: var(--neutral-200);
+    --modal-btn-fill: var(--neutral-25);
+
+    --modal-wash-01: #1299b217;
+    --modal-wash-02: #13131326;
+
+    --radio-empty-fill: var(--neutral-250);
+    --radio-empty-fill-invert: var(--neutral-600);
+    --radio-empty-fill-2: var(--neutral-350);
+
+    --radio-fill: var(--brand-main-01);
+    --radio-fill-2: var(--brand-main-07);
+
+    --selector-text-no: var(--neutral-500);
+    --selector-text-yes: var(--brand-main-05);
+    --selector-surface-no: var(--neutral-100);
+    --selector-surface-yes: var(--brand-main-06);
+    --selector-stroke-no: var(--neutral-100);
+    --selector-stroke-yes: var(--brand-main-07);
+
+    --misc-icon-stroke: var(--neutral-150);
+    --misc-upload-bar-base: var(--neutral-150);
+    --misc-alert-general: var(--orange-05);
+    --misc-pending-general: var(--yellow-06);
+    --misc-review-general: var(--blue-05);
+    --misc-review-invert: var(--blue-04);
+    --misc-error-text: var(--rose-06);
+    --misc-icon-base: var(--neutral-50);
+
+    --inline-messages-info: var(--blue-01);
+
+    --chips-success: var(--green-06);
+    --chips-failure: var(--rose-05);
+    --chips-pending: var(--orange-06);
+    --chips-chip-stroke: var(--neutral-100);
+
+    --big-chips-success-text: var(--brand-pure);
+    --big-chips-success-text-02: var(--green-07);
+    --big-chips-failure-text: var(--brand-pure);
+    --big-chips-pending-text: var(--brand-pure);
+    --big-chips-review-text: var(--blue-07);
+    --big-chips-success-bg: var(--green-07);
+    --big-chips-success-bg-trans: var(--green-11);
+    --big-chips-failure-bg: var(--rose-07);
+    --big-chips-pending-bg: var(--orange-07);
+    --big-chips-review-bg-trans: rgba(46, 147, 255, 0.15);
+
+    --table-table-surface-01: var(--neutral-100);
+    --table-table-surface-02: var(--brand-pure);
+    --table-select-table: var(--neutral-25);
+    --table-table-stroke-01: var(--neutral-50);
+    --table-table-surface-header: var(--neutral-50);
+    --table-table-surface-body: var(--brand-pure);
+
+    --dropdown-dropdown-surface-01: var(--brand-pure);
+    --dropdown-dropdown-item-hover-01: var(--neutral-50);
+    --dropdown-dropdown-surface-02: var(--neutral-870);
+    --dropdown-dropdown-item-hover-02: var(--neutral-800);
+
+    --d-shadow-01: #cdcdcd40;
+    --d-shadow-02: #23232302;
+    --d-shadow-03: #005c6d02;
+    --d-shadow-04: #006c8002;
+    --d-shadow-05: #23232320;
+    --d-shadow-06: #cdcdcd80;
+    --d-shadow-07: #3a3a3a33;
+    --d-shadow-08: #006c8005;
+    --d-shadow-09: #3a3a3a73;
+    --d-shadow-10: #3a3a3a45;
+
+    --dropdown-dropdown-sunken: var(--neutral-850);
+    --dropdown-dropdown-elevated: var(--neutral-750);
+
+    --dropdown-field-surface: var(--neutral-740);
+    --dropdown-field-text: var(--brand-pure);
+    --dropdown-field-placeholder: var(--neutral-400);
+
+    --dropdown-delete-text: var(--rose-04);
+
+    --slider-slider-01: rgba(255, 255, 255, 0);
+    --slider-slider-02: var(--brand-pure);
+    --slider-circle-fill: var(--neutral-950);
+    --slider-circle-icon: var(--brand-pure);
+
+    --toast-toast-text: var(--neutral-25);
+    --toast-toast-text-sub: var(--neutral-200);
+    --toast-toast-success: var(--green-04);
+    --toast-toast-failure: var(--rose-04);
+    --toast-warning-surface: #fff3eb;
+    --bsheet-bsheet-surface: var(--brand-pure);
+
+    --circle-circle-success: var(--green-01);
+    --circle-circle-failure: var(--rose-01);
+    --circle-circle-pending: var(--amber-01);
+
+    --circle-icon-success: var(--green-06);
+    --circle-icon-failure: var(--rose-06);
+    --circle-icon-pending: var(--amber-06);
+
+    --close-text-01: var(--neutral-850);
+    --close-info-01: var(--neutral-100);
+
+    --danger-primary: var(--rose-05);
+    --danger-secondary: var(--rose-07);
+
+    /* Invoice Status */
+    --invoice-paid-bg: rgba(44, 216, 127, 0.15);
+    --invoice-paid-text: var(--green-07);
+    --invoice-unpaid-bg: rgba(245, 158, 11, 0.15);
+    --invoice-unpaid-text: var(--orange-06);
+    --invoice-draft-bg: var(--neutral-100);
+    --invoice-draft-text: var(--neutral-650);
+    --invoice-overdue-bg: rgba(224, 49, 79, 0.15);
+    --invoice-overdue-text: var(--rose-05);
+    --invoice-sent-bg: rgba(46, 147, 255, 0.15);
+    --invoice-sent-text: var(--blue-06);
+    --invoice-partial-bg: rgba(108, 92, 231, 0.15);
+    --invoice-partial-text: #6c5ce7;
+    --invoice-cancelled-bg: var(--neutral-100);
+    --invoice-cancelled-text: var(--neutral-500);
+  }
+
+  .dark {
+    --surface-hover-01: var(--neutral-870);
+    --surface-hover-02: var(--neutral-850);
+    --surface-hover-03: var(--neutral-700);
+    --surface-select-01: var(--neutral-850);
+    --surface-name: var(--neutral-850);
+    --surface-name-click: var(--neutral-750);
+    --surface-tertiary: var(--neutral-850);
+    --surface-brand: var(--brand-main-02);
+    --surface-sidebar-alert: var(--rose-05);
+    --surface-sidebar-select: var(--neutral-850);
+    --surface-sidebar-hover-dropdown: var(--neutral-850);
+
+    --surface-level-01: var(--neutral-950);
+    --surface-level-01-isolated: var(--neutral-950);
+    --surface-level-01-invert: var(--brand-pure);
+    --surface-level-01-invert-alt: var(--neutral-100);
+    --surface-level-02: var(--neutral-900);
+    --surface-level-02-alt: var(--neutral-870);
+    --surface-level-02-alt-switch: var(--neutral-870);
+    --surface-level-02-alt-switch-sheet: var(--neutral-850);
+    --surface-level-03: var(--neutral-740);
+    --surface-level-04: var(--neutral-650);
+    --surface-level-04-alt: var(--neutral-650);
+    --surface-level-05: var(--neutral-550);
+    --surface-level-sunken: var(--neutral-950);
+    --surface-level-danger: #e0314f26;
+    --surface-level-clickable: #3b3b3b;
+    --surface-level-branch-holder: #2e2e2e;
+
+    --surface-stroke-01: var(--neutral-860);
+    --surface-stroke-02: var(--neutral-900);
+    --surface-stroke-02-sheet: var(--neutral-800);
+    --surface-stroke-02-sheet-02: var(--neutral-740);
+    --surface-stroke-03: var(--neutral-850);
+
+    --field-level-01: var(--neutral-740);
+    --field-level-02: var(--neutral-700);
+    --field-level-03: var(--neutral-700);
+    --field-level-04: var(--neutral-960);
+    --field-level-05: var(--neutral-700);
+    --field-level-selected: var(--neutral-740);
+    --field-level-01-invert: var(--neutral-50);
+    --field-level-01-selected: var(--neutral-650);
+    --field-level-extra-option: var(--neutral-500);
+    --field-error: var(--rose-09);
+
+    --field-level-hover-01: var(--neutral-700);
+    --field-level-hover-02: var(--neutral-650);
+
+    --field-stroke-01: var(--neutral-900);
+    --field-stroke-unnamed: var(--neutral-400);
+    --field-stroke-error: var(--neutral-870);
+
+    --text-main-01: var(--neutral-25);
+    --text-main-02: var(--neutral-350);
+    --text-sub-01: var(--neutral-300);
+    --text-sub-02: var(--neutral-300);
+    --text-tertiary: var(--neutral-400);
+    --text-tertiary-invert: var(--neutral-300);
+    --text-sidebar: var(--neutral-450);
+    --text-invert: var(--neutral-950);
+    --text-invert-sub: var(--neutral-500);
+    --text-coloured: var(--brand-main-07);
+    --text-coloured-invert: var(--brand-main-01);
+    --text-username: var(--neutral-300);
+    --text-branch-name: #afafaf;
+
+    --info-surface-01: var(--neutral-700);
+    --info-surface-1-invert: var(--neutral-50);
+    --info-surface-02: var(--neutral-740);
+    --info-surface-error: var(--rose-07);
+
+    --info-text-01: var(--neutral-25);
+    --info-text-02: var(--neutral-25);
+    --info-text-error: var(--rose-01);
+
+    --btn-main-01: var(--brand-main-01);
+    --btn-main-01-disabled: var(--neutral-600);
+    --btn-main-01-hover: var(--brand-main-02);
+    --btn-main-02: var(--neutral-740);
+    --btn-main-03: var(--brand-main-07);
+    --btn-main-04: var(--brand-main-09);
+
+    --btn-upload-btn: var(--neutral-700);
+
+    --btn-text-btn-01: var(--brand-pure);
+    --btn-text-btn-02: var(--neutral-150);
+    --btn-text-btn-03: var(--neutral-300);
+    --btn-text-btn-04: var(--brand-pure);
+    --btn-text-btn-disabled: var(--brand-pure);
+    --btn-text-coloured: var(--brand-main-03);
+
+    --btn-upload-01: var(--neutral-200);
+    --btn-upload-02: var(--brand-pure);
+
+    --btn-go-back: var(--neutral-850);
+    --btn-go-back-text: var(--brand-pure);
+
+    --btn-field-btn-main: var(--brand-pure);
+    --btn-field-btn-sub: var(--neutral-850);
+    --btn-white: var(--white-01);
+    --btn-sunk: var(--neutral-870);
+
+    --btn-dropdown-btn: var(--neutral-740);
+    --btn-dropdown-sub-active: var(--neutral-150);
+    --btn-dropdown-main-disabled: var(--neutral-150);
+    --btn-dropdown-main-active: var(--brand-main-02);
+    --btn-remove-fill: var(--rose-06);
+    --btn-popup-02: var(--brand-main-02);
+
+    --states-state-error: var(--rose-05);
+    --states-state-success: var(--green-06);
+    --states-ticked: var(--brand-main-04);
+    --states-state-unticked: var(--orange-05);
+
+    --brand-word: var(--brand-pure);
+    --brand-icon: var(--brand-main-07);
+
+    --modal-surface: var(--neutral-550);
+    --modal-in-stroke: var(--neutral-450);
+    --modal-field: var(--neutral-600);
+    --modal-btn-stroke: var(--neutral-450);
+    --modal-btn-fill: var(--neutral-500);
+
+    --modal-wash-01: #1299b200;
+    --modal-wash-02: #000000cc;
+
+    --radio-empty-fill: var(--neutral-600);
+    --radio-empty-fill-invert: var(--neutral-250);
+    --radio-empty-fill-2: var(--neutral-300);
+    --radio-fill: var(--brand-main-07);
+    --radio-fill-2: var(--brand-main-01);
+
+    --selector-text-no: var(--neutral-200);
+    --selector-text-yes: var(--neutral-50);
+    --selector-surface-yes: var(--brand-main-05);
+    --selector-surface-no: var(--neutral-740);
+    --selector-stroke-no: var(--neutral-740);
+    --selector-stroke-yes: var(--brand-main-07);
+
+    --misc-icon-stroke: var(--neutral-600);
+    --misc-upload-bar-base: var(--neutral-700);
+    --misc-alert-general: var(--orange-05);
+    --misc-pending-general: var(--yellow-05);
+    --misc-review-general: var(--blue-04);
+    --misc-review-invert: var(--blue-05);
+    --misc-error-text: var(--rose-04);
+    --misc-icon-base: var(--neutral-740);
+
+    --inline-messages-info: var(--blue-09);
+
+    --chips-success: var(--green-03);
+    --chips-failure: var(--rose-03);
+    --chips-pending: var(--orange-03);
+    --chips-chip-stroke: var(--neutral-850);
+
+    --big-chips-success-text: var(--brand-pure);
+    --big-chips-success-text-02: var(--green-10);
+    --big-chips-failure-text: var(--brand-pure);
+    --big-chips-pending-text: var(--brand-pure);
+    --big-chips-review-text: var(--blue-03);
+    --big-chips-success-bg: var(--green-08);
+    --big-chips-success-bg-trans: var(--green-11);
+    --big-chips-failure-bg: var(--rose-08);
+    --big-chips-pending-bg: var(--orange-08);
+    --big-chips-review-bg-trans: rgba(46, 147, 255, 0.15);
+
+    --table-table-surface-01: var(--neutral-800);
+    --table-table-surface-02: var(--neutral-870);
+    --table-select-table: var(--neutral-900);
+    --table-table-stroke-01: var(--neutral-800);
+    --table-table-surface-header: var(--neutral-800);
+    --table-table-surface-body: var(--neutral-900);
+
+    --dropdown-dropdown-surface-01: var(--neutral-740);
+    --dropdown-dropdown-item-hover-01: var(--neutral-650);
+    --dropdown-dropdown-surface-02: var(--brand-pure);
+    --dropdown-dropdown-item-hover-02: var(--neutral-100);
+
+    --d-shadow-01: #2e2e2e00;
+    --d-shadow-02: #13131300;
+    --d-shadow-03: #00000000;
+    --d-shadow-04: #ffffff07;
+    --d-shadow-05: #13131350;
+    --d-shadow-06: #ffffff00;
+    --d-shadow-07: #ffffff00;
+    --d-shadow-08: var(--neutral-700);
+    --d-shadow-09: #45454500;
+    --d-shadow-10: #45454500;
+
+    --dropdown-dropdown-sunken: var(--neutral-50);
+    --dropdown-dropdown-elevated: var(--brand-pure);
+
+    --dropdown-field-surface: var(--neutral-100);
+    --dropdown-field-text: var(--neutral-950);
+    --dropdown-field-placeholder: var(--neutral-300);
+
+    --dropdown-delete-text: var(--rose-05);
+
+    --slider-slider-01: rgba(27, 27, 27, 0);
+    --slider-slider-02: var(--neutral-870);
+    --slider-circle-fill: var(--brand-pure);
+    --slider-circle-icon: var(--neutral-950);
+
+    --toast-toast-text: var(--neutral-950);
+    --toast-toast-text-sub: var(--neutral-500);
+    --toast-toast-success: var(--green-05);
+    --toast-toast-failure: var(--rose-05);
+    --toast-warning-surface: #1f1815;
+    --bsheet-bsheet-surface: var(--neutral-850);
+
+    --circle-circle-success: var(--green-09);
+    --circle-circle-failure: var(--rose-09);
+    --circle-circle-pending: var(--amber-09);
+
+    /* Icon States */
+    --circle-icon-success: var(--green-02);
+    --circle-icon-failure: var(--rose-02);
+    --circle-icon-pending: var(--amber-02);
+
+    --close-text-01: var(--neutral-25);
+    --close-info-01: var(--neutral-700);
+
+    --danger-primary: var(--rose-04);
+    --danger-secondary: var(--rose-02);
+
+    /* Invoice Status */
+    --invoice-paid-bg: rgba(44, 216, 127, 0.2);
+    --invoice-paid-text: var(--green-02);
+    --invoice-unpaid-bg: rgba(255, 149, 88, 0.2);
+    --invoice-unpaid-text: var(--orange-02);
+    --invoice-draft-bg: rgba(255, 255, 255, 0.075);
+    --invoice-draft-text: var(--neutral-200);
+    --invoice-overdue-bg: rgba(224, 49, 79, 0.2);
+    --invoice-overdue-text: var(--rose-02);
+    --invoice-sent-bg: rgba(46, 147, 255, 0.2);
+    --invoice-sent-text: var(--blue-02);
+    --invoice-partial-bg: rgba(108, 92, 231, 0.2);
+    --invoice-partial-text: #a29bfe;
+    --invoice-cancelled-bg: rgba(255, 255, 255, 0.05);
+    --invoice-cancelled-text: var(--neutral-400);
+  }
+}
+
+@layer base{ 
+
+ * {
+     
+     border-color: var(--surface-stroke-01);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading;
+  }
+   #root {
+     min-height: 100%;
+  }  
+body {
+    @apply font-body;
+    background-color: var(--surface-level-01);
+    color: var(--text-main-01);
+}
+}
