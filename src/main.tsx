@@ -13,7 +13,7 @@ import {dashboardRoutes} from "./routes/dashboard.route"
 import "./App.css"
 import { Dashboard } from "./pages/dashboard/Dashboard";
 
-document.documentElement.classList.add("dark");
+
 
 const queryClient = new QueryClient({
   queryCache: new QueryCache(),

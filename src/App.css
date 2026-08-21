@@ -4,21 +4,21 @@
 
 /* Body — Geist */
 @font-face {
-  font-family: 'Geist';
+  font-family: "Geist";
   font-style: normal;
   font-weight: 100 900;
   font-display: swap;
-  src: url('./fonts/geist/Geist-Variable.woff2') format('woff2');
+  src: url("./fonts/geist/Geist-Variable.woff2") format("woff2");
 }
 
 /* Headings — Zalando Sans SemiExpanded */
 @font-face {
-  font-family: 'Zalando Sans SemiExpanded';
+  font-family: "Zalando Sans SemiExpanded";
   font-style: normal;
   font-weight: 200 900;
   font-display: swap;
-  src: url('/fonts/zalando-sans/ZalandoSansSemiExpanded-Semibold.ttf')
-    format('ttf');
+  src: url("/fonts/zalando-sans/ZalandoSansSemiExpanded-Semibold.ttf")
+    format("ttf");
 }
 
 @theme {
@@ -755,11 +755,9 @@
   }
 }
 
-@layer base{ 
-
- * {
-     
-     border-color: var(--surface-stroke-01);
+@layer base {
+  * {
+    border-color: var(--surface-stroke-01);
   }
 
   h1,
@@ -770,12 +768,12 @@
   h6 {
     @apply font-heading;
   }
-   #root {
-     min-height: 100%;
-  }  
-body {
+  #root {
+    min-height: 100%;
+  }
+  body {
     @apply font-body;
     background-color: var(--surface-level-01);
     color: var(--text-main-01);
-}
+  }
 }
